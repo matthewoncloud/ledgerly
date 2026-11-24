@@ -1,0 +1,16 @@
+{
+  "name": "ledgerly",
+  "version": "1.0.0",
+  "description": "Self-hosted earnings & expense tracker for side hustles and small businesses, with multi-user accounts.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/**/*.test.js\""
+  }
+}

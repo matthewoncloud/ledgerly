@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in · Ledgerly</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/app.css">
+<script src="/assets/theme.js"></script>
+<script type="module" src="/assets/login.js"></script>
+</head>
+<body>
+<main class="auth-page">
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17l5-6 4 3 5-7"/></svg></span>
+      Ledgerly
+    </div>
+    <section class="card auth-card" aria-labelledby="authTitle">
+      <h1 id="authTitle">Sign in</h1>
+      <p class="auth-sub" id="authSub">Welcome back. Sign in to see your businesses.</p>
+
+      <div class="auth-alert" id="authAlert" role="alert" hidden></div>
+
+      <form id="authForm" novalidate>
+        <div class="field">
+          <label class="lbl" for="username">Username or email</label>
+          <input class="input" id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="64" required>
+        </div>
+        <div class="field">
+          <label class="lbl" for="password">Password</label>
+          <input class="input" id="password" name="password" type="password" autocomplete="current-password" maxlength="200" required>
+        </div>
+        <div class="field" id="confirmField" hidden>
+          <label class="lbl" for="confirm">Confirm password</label>
+          <input class="input" id="confirm" name="confirm" type="password" autocomplete="new-password" maxlength="200">
+          <div class="help">At least 8 characters.</div>
+        </div>
+        <button class="btn btn-primary auth-submit" type="submit" id="authSubmit">Sign in</button>
+      </form>
+
+      <p class="auth-switch" id="authSwitch" hidden>
+        <span id="switchText">New here?</span>
+        <button class="link-btn" type="button" id="switchBtn">Create an account</button>
+      </p>
+    </section>
+    <p class="auth-foot">Your data is private to your account on this server.</p>
+  </div>
+</main>
+</body>
+</html>

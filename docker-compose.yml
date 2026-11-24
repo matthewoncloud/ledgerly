@@ -1,0 +1,27 @@
+# Ledgerly — example Docker Compose setup.
+#
+#   docker compose up -d
+#
+# Then open http://localhost:8080 and create the first account (it becomes the administrator).
+
+services:
+  ledgerly:
+    image: ghcr.io/OWNER/ledgerly:latest   # replace OWNER with the GitHub user/org that publishes the image
+    # build: .                             # …or build from this folder instead
+    container_name: ledgerly
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # Sign-ups: leave unset to manage them from Settings → Server administration,
+      # or force them with "true" / "false".
+      # ALLOW_REGISTRATION: "false"
+      # Set to "true" when running behind a reverse proxy (Caddy, Traefik, nginx…)
+      # so client IPs and HTTPS are detected correctly.
+      # TRUST_PROXY: "true"
+      SESSION_DAYS: "30"
+    volumes:
+      - ledgerly-data:/data
+
+volumes:
+  ledgerly-data:
